@@ -87,3 +87,12 @@ The whole job is in `./chainlink/job.txt`
    UintTest4: https://jpg-adapter.yokupass.com/buyNFT_3
    UintTest5: https://jpg-adapter.yokupass.com/buyNFT_4
   ```
+
+  for localhost testing:
+  ```
+   UintTest1:  http://localhost:6500/buyNFT
+   UintTest2:  http://localhost:6500/buyNFT_1
+   UintTest3:  http://localhost:6500/buyNFT_2
+   UintTest4:  http://localhost:6500/buyNFT_3
+   UintTest5:  http://localhost:6500/buyNFT_4
+  ```
