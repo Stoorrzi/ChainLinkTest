@@ -17,7 +17,7 @@ by the smartcontract. The current ADA-ETH price is also returned. These three da
     callback(jobRunID, Requester.success(jobRunID, response));
 ```
 
-The whole process can be looked up in externalAdapter.js
+The whole process can be looked up in `./src/function/BuyNFT.js`
 
 ## ChainLink Job
 
@@ -59,4 +59,31 @@ data: expected string, got map[string]interface {}: bad input for task
 ```
 
 So we need a solution to acces the response from the mode task to retun it to the smart contract.
-The whole job is in job.txt 
+The whole job is in `./chainlink/job.txt`
+
+## Run the server
+
+- run `npm install`
+- add .env:
+  ```POSTGRES_USER=postgres
+  POSTGRES_PASSWORD=password
+  POSTGRES_HOST=23.88.50.29
+  POSTGRES_PORT=5432
+  POSTGRES_DATABASE=jobs
+  NFT_CONTRACT=0x85a3836E8A6B3DABc531Ed97F4CBa1bF5ddF4782
+  ```
+- run `npm or nodemon start externalAdapter.js`
+
+## Deploy contract and create Job
+
+- create Job in the ChainLink CLI with `./chainlink/job.txt`
+- deploy contract `./chainlink/contract.sol`
+
+- Job bridges:
+  ```
+   UintTest1: https://jpg-adapter.yokupass.com/buyNFT
+   UintTest2: https://jpg-adapter.yokupass.com/buyNFT_1
+   UintTest3: https://jpg-adapter.yokupass.com/buyNFT_2
+   UintTest4: https://jpg-adapter.yokupass.com/buyNFT_3
+   UintTest5: https://jpg-adapter.yokupass.com/buyNFT_4
+  ```

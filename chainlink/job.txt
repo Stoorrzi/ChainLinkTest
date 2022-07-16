@@ -10,15 +10,15 @@ observationSource = """
                   topics="$(jobRun.logTopics)"]
 
     decode_cbor  [type=cborparse data="$(decode_log.data)"]
-    fetch_1        [type=bridge name="bridgeTwo" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
+    fetch_1        [type=bridge name="UintTest1" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
     parse_1        [type=jsonparse path="result" data="$(fetch_1)"]
-    fetch_2        [type=bridge name="Test1" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
+    fetch_2        [type=bridge name="UintTest2" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
     parse_2        [type=jsonparse path="result" data="$(fetch_2)"]
-    fetch_3        [type=bridge name="Test2" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
+    fetch_3        [type=bridge name="UintTest3" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
     parse_3        [type=jsonparse path="result" data="$(fetch_3)"]
-    fetch_4        [type=bridge name="Test3" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
+    fetch_4        [type=bridge name="UintTest4" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
     parse_4        [type=jsonparse path="result" data="$(fetch_4)"]
-    fetch_5        [type=bridge name="Test4" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
+    fetch_5        [type=bridge name="UintTest5" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
     parse_5        [type=jsonparse path="result" data="$(fetch_5)"]
     my_median_task [type="mode"
                 values=<[ $(parse_1), $(parse_2), $(parse_3), $(parse_4), $(parse_5) ]>
