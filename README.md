@@ -25,7 +25,7 @@ Five different external adapters are queried in the ChainLink job. The returned 
 processing.
 
 ```
-    fetch_1        [type=bridge name="bridgeTwo" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
+    fetch_1        [type=bridge name="UintTest1" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
     parse_1        [type=jsonparse path="result" data="$(fetch_1)"]
 ```
 
