@@ -1,0 +1,214 @@
+{
+    "outputs": [
+      null
+    ],
+    "errors": [
+      "task inputs: too many errors"
+    ],
+    "allErrors": [
+      "task inputs: too many errors",
+      "task inputs: too many errors",
+      "data: expected string, got map[string]interface {}: bad input for task",
+      "task inputs: too many errors"
+    ],
+    "fatalErrors": [
+      "task inputs: too many errors"
+    ],
+    "inputs": {
+      "jobRun": {
+        "logAddress": "0xc830eef3d3c392486bfce4d00c03eee5b9af24f1",
+        "logBlockHash": "0x2b79d7e81ec7719d777a41689761d31076ca251ab08fa8e2dc53dfc6ecfbbf87",
+        "logBlockNumber": 11041561,
+        "logData": "AAAAAAAAAAAAAAAAEbHMEA3Xbo3+B+OBP/Jd94m0D7fZekVY7dML/oru4lZOBGKMPv80ND478c7kAeTfNRAnOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFjRXhdigAAAAAAAAAAAAAAAAAAEbHMEA3Xbo3+B+OBP/Jd94m0D7dKchWeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABi1FVDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfY3R4aHgZMHgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMAA=",
+        "logTopics": [
+          "0xd8d7ecc4800d25fa53ce0372f13a416d98907a7ef3d8d3bdd79cf4fe75529c65",
+          "0x3066396264666532383832373435666162313833666131356337353933323931"
+        ],
+        "logTxHash": "0x5357846bceb94564152b91f7de9d1560305b745ad1fa1f5d89350bade0b804e6",
+        "meta": {
+          "oracleRequest": {
+            "callbackAddr": "0x11B1Cc100dD76E8Dfe07E3813Ff25dF789B40fB7",
+            "callbackFunctionId": "0x4a72159e",
+            "cancelExpiration": "1658082627",
+            "data": "0x63747868781930783030303030303030303030303030303030303030303030",
+            "dataVersion": "1",
+            "payment": "100000000000000000",
+            "requestId": "0xd97a4558edd30bfe8aeee2564e04628c3eff34343e3bf1cee401e4df35102738",
+            "requester": "0x11B1Cc100dD76E8Dfe07E3813Ff25dF789B40fB7",
+            "specId": "0x3066396264666532383832373435666162313833666131356337353933323931"
+          }
+        }
+      },
+      "jobSpec": {
+        "databaseID": 67,
+        "externalJobID": "0f9bdfe2-8827-45fa-b183-fa15c7593291",
+        "name": "Test_Mode_0.1"
+      }
+    },
+    "taskRuns": [
+      {
+        "type": "ethtx",
+        "createdAt": "2022-07-17T18:25:44.339601Z",
+        "finishedAt": "2022-07-17T18:25:44.380884Z",
+        "output": null,
+        "error": "task inputs: too many errors",
+        "dotId": "submit_tx",
+        "status": "not_run"
+      },
+      {
+        "type": "ethabidecodelog",
+        "createdAt": "2022-07-17T18:25:44.350121Z",
+        "finishedAt": "2022-07-17T18:25:44.350879Z",
+        "output": "{"callbackAddr":"0x11b1cc100dd76e8dfe07e3813ff25df789b40fb7","callbackFunctionId":[74,114,21,158],"cancelExpiration":1658082627,"data":"Y3R4aHgZMHgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==","dataVersion":1,"payment":100000000000000000,"requestId":[217,122,69,88,237,211,11,254,138,238,226,86,78,4,98,140,62,255,52,52,62,59,241,206,228,1,228,223,53,16,39,56],"requester":"0x11b1cc100dd76e8dfe07e3813ff25df789b40fb7","specId":[48,102,57,98,100,102,101,50,56,56,50,55,52,53,102,97,98,49,56,51,102,97,49,53,99,55,53,57,51,50,57,49]}",
+        "error": null,
+        "dotId": "decode_log",
+        "status": "completed"
+      },
+      {
+        "type": "cborparse",
+        "createdAt": "2022-07-17T18:25:44.351008Z",
+        "finishedAt": "2022-07-17T18:25:44.351272Z",
+        "output": "{"txh":"0x00000000000000000000000"}",
+        "error": null,
+        "dotId": "decode_cbor",
+        "status": "completed"
+      },
+      {
+        "type": "bridge",
+        "createdAt": "2022-07-17T18:25:44.351364Z",
+        "finishedAt": "2022-07-17T18:25:44.366465Z",
+        "output": ""{\"jobRunID\":200,\"data\":{\"result\":\"0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303732\"},\"result\":\"0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303732\",\"statusCode\":200}"",
+        "error": null,
+        "dotId": "fetch_1",
+        "status": "completed"
+      },
+      {
+        "type": "jsonparse",
+        "createdAt": "2022-07-17T18:25:44.366755Z",
+        "finishedAt": "2022-07-17T18:25:44.366996Z",
+        "output": ""0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303732"",
+        "error": null,
+        "dotId": "parse_1",
+        "status": "completed"
+      },
+      {
+        "type": "bridge",
+        "createdAt": "2022-07-17T18:25:44.367207Z",
+        "finishedAt": "2022-07-17T18:25:44.370597Z",
+        "output": ""{\"jobRunID\":200,\"data\":{\"result\":\"0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303732\"},\"result\":\"0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303732\",\"statusCode\":200}"",
+        "error": null,
+        "dotId": "fetch_2",
+        "status": "completed"
+      },
+      {
+        "type": "jsonparse",
+        "createdAt": "2022-07-17T18:25:44.37075Z",
+        "finishedAt": "2022-07-17T18:25:44.370966Z",
+        "output": ""0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303732"",
+        "error": null,
+        "dotId": "parse_2",
+        "status": "completed"
+      },
+      {
+        "type": "bridge",
+        "createdAt": "2022-07-17T18:25:44.371131Z",
+        "finishedAt": "2022-07-17T18:25:44.373689Z",
+        "output": ""{\"jobRunID\":200,\"data\":{\"result\":\"0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303731\"},\"result\":\"0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303731\",\"statusCode\":200}"",
+        "error": null,
+        "dotId": "fetch_3",
+        "status": "completed"
+      },
+      {
+        "type": "jsonparse",
+        "createdAt": "2022-07-17T18:25:44.373851Z",
+        "finishedAt": "2022-07-17T18:25:44.374087Z",
+        "output": ""0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303731"",
+        "error": null,
+        "dotId": "parse_3",
+        "status": "completed"
+      },
+      {
+        "type": "bridge",
+        "createdAt": "2022-07-17T18:25:44.374215Z",
+        "finishedAt": "2022-07-17T18:25:44.376538Z",
+        "output": ""{\"jobRunID\":200,\"data\":{\"result\":\"0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303731\"},\"result\":\"0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303731\",\"statusCode\":200}"",
+        "error": null,
+        "dotId": "fetch_4",
+        "status": "completed"
+      },
+      {
+        "type": "jsonparse",
+        "createdAt": "2022-07-17T18:25:44.376601Z",
+        "finishedAt": "2022-07-17T18:25:44.376699Z",
+        "output": ""0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303731"",
+        "error": null,
+        "dotId": "parse_4",
+        "status": "completed"
+      },
+      {
+        "type": "bridge",
+        "createdAt": "2022-07-17T18:25:44.37675Z",
+        "finishedAt": "2022-07-17T18:25:44.379079Z",
+        "output": ""{\"jobRunID\":200,\"data\":{\"result\":\"0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303732\"},\"result\":\"0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303732\",\"statusCode\":200}"",
+        "error": null,
+        "dotId": "fetch_5",
+        "status": "completed"
+      },
+      {
+        "type": "jsonparse",
+        "createdAt": "2022-07-17T18:25:44.379179Z",
+        "finishedAt": "2022-07-17T18:25:44.379289Z",
+        "output": ""0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303732"",
+        "error": null,
+        "dotId": "parse_5",
+        "status": "completed"
+      },
+      {
+        "type": "mode",
+        "createdAt": "2022-07-17T18:25:44.379374Z",
+        "finishedAt": "2022-07-17T18:25:44.379542Z",
+        "output": "{"occurrences":3,"results":["0x30783765314242444465336342323646343036383030383638663130313035353932643530376244303732"]}",
+        "error": null,
+        "dotId": "my_median_task",
+        "status": "completed"
+      },
+      {
+        "type": "jsonparse",
+        "createdAt": "2022-07-17T18:25:44.379621Z",
+        "finishedAt": "2022-07-17T18:25:44.380067Z",
+        "output": null,
+        "error": "data: expected string, got map[string]interface {}: bad input for task",
+        "dotId": "parse_mode",
+        "status": "errored"
+      },
+      {
+        "type": "ethabiencode",
+        "createdAt": "2022-07-17T18:25:44.380152Z",
+        "finishedAt": "2022-07-17T18:25:44.380349Z",
+        "output": null,
+        "error": "task inputs: too many errors",
+        "dotId": "encode_data",
+        "status": "errored"
+      },
+      {
+        "type": "ethabiencode",
+        "createdAt": "2022-07-17T18:25:44.380412Z",
+        "finishedAt": "2022-07-17T18:25:44.380609Z",
+        "output": null,
+        "error": "task inputs: too many errors",
+        "dotId": "encode_tx",
+        "status": "not_run"
+      }
+    ],
+    "createdAt": "2022-07-17T18:25:44.333178Z",
+    "finishedAt": "2022-07-17T18:25:44.380894Z",
+    "pipelineSpec": {
+      "id": 68,
+      "jobID": 0,
+      "dotDagSource": " decode_log [type=ethabidecodelog abi="OracleRequest(bytes32 indexed specId, address requester, bytes32 requestId, uint256 payment, address callbackAddr, bytes4 callbackFunctionId, uint256 cancelExpiration, uint256 dataVersion, bytes data)" data="$(jobRun.logData)" topics="$(jobRun.logTopics)"] decode_cbor [type=cborparse data="$(decode_log.data)"] fetch_1 [type=bridge name="bridgeTwo" requestData="{\"id\": $(jobSpec.externalJobID), \"data\": { \"txh\": $(decode_cbor.txh)}}"] parse_1 [type=jsonparse path="result" data="$(fetch_1)"] fetch_2 [type=bridge name="Test1" requestData="{\"id\": $(jobSpec.externalJobID), \"data\": { \"txh\": $(decode_cbor.txh)}}"] parse_2 [type=jsonparse path="result" data="$(fetch_2)"] fetch_3 [type=bridge name="Test2" requestData="{\"id\": $(jobSpec.externalJobID), \"data\": { \"txh\": $(decode_cbor.txh)}}"] parse_3 [type=jsonparse path="result" data="$(fetch_3)"] fetch_4 [type=bridge name="Test3" requestData="{\"id\": $(jobSpec.externalJobID), \"data\": { \"txh\": $(decode_cbor.txh)}}"] parse_4 [type=jsonparse path="result" data="$(fetch_4)"] fetch_5 [type=bridge name="Test4" requestData="{\"id\": $(jobSpec.externalJobID), \"data\": { \"txh\": $(decode_cbor.txh)}}"] parse_5 [type=jsonparse path="result" data="$(fetch_5)"] my_median_task [type="mode" values=<[ $(parse_1), $(parse_2), $(parse_3), $(parse_4), $(parse_5) ]> allowedFaults=2] parse_mode [type=jsonparse path="results,0" data="$(my_median_task)"] encode_data [type=ethabiencode abi="(bytes value)" data="{ \"value\": $(parse_mode) }"] encode_tx [type=ethabiencode abi="fulfillOracleRequest(bytes32 requestId, uint256 payment, address callbackAddress, bytes4 callbackFunctionId, uint256 expiration, bytes calldata data)" data="{\"requestId\": $(decode_log.requestId), \"payment\": $(decode_log.payment), \"callbackAddress\": $(decode_log.callbackAddr), \"callbackFunctionId\": $(decode_log.callbackFunctionId), \"expiration\": $(decode_log.cancelExpiration), \"data\": $(encode_data)}" ] submit_tx [type=ethtx to="0x327A92FBb7D7c96D349B4207603B910d3c40c9F5" data="$(encode_tx)"] decode_log -> decode_cbor -> fetch_1 -> parse_1 -> fetch_2 -> parse_2 -> fetch_3 -> parse_3 -> fetch_4 -> parse_4 -> fetch_5 -> parse_5 -> my_median_task -> parse_mode -> encode_data -> encode_tx -> submit_tx "
+    },
+    "id": "295",
+    "jobId": "67",
+    "status": "errored",
+    "type": "Pipeline job run"
+  }

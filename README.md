@@ -61,6 +61,8 @@ data: expected string, got map[string]interface {}: bad input for task
 So we need a solution to acces the response from the mode task to retun it to the smart contract.
 The whole job is in `./chainlink/job.txt`
 
+See the error-log in ```./chainlink/error.json``` 
+
 ## Run the server
 
 - run `npm install`
