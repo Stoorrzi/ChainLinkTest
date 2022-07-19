@@ -1,6 +1,6 @@
 type = "directrequest"
 schemaVersion = 1
-name = "Test_Mode_0.1"
+name = "Test_Mode_2.2"
 contractAddress = "0xc830eEF3d3C392486BFcE4D00C03eEE5b9aF24f1"
 maxTaskDuration = "0s"
 observationSource = """
@@ -10,7 +10,7 @@ observationSource = """
                   topics="$(jobRun.logTopics)"]
 
     decode_cbor  [type=cborparse data="$(decode_log.data)"]
-    fetch_1        [type=bridge name="UintTest1" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
+       fetch_1        [type=bridge name="UintTest1" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
     parse_1        [type=jsonparse path="result" data="$(fetch_1)"]
     fetch_2        [type=bridge name="UintTest2" requestData="{\\"id\\": $(jobSpec.externalJobID), \\"data\\": { \\"txh\\": $(decode_cbor.txh)}}"]
     parse_2        [type=jsonparse path="result" data="$(fetch_2)"]
@@ -23,16 +23,15 @@ observationSource = """
     my_median_task [type="mode"
                 values=<[ $(parse_1), $(parse_2), $(parse_3), $(parse_4), $(parse_5) ]>
                 allowedFaults=2]
-    parse_mode   [type=jsonparse path="results,0" data="$(my_median_task)"]
     encode_data  [type=ethabiencode 
                 abi="(bytes value)" 
-                data="{ \\"value\\": $(parse_mode) }"]
+                data="{ \\"value\\": $(my_median_task.results) }"]
     encode_tx    [type=ethabiencode
                   abi="fulfillOracleRequest(bytes32 requestId, uint256 payment, address callbackAddress, bytes4 callbackFunctionId, uint256 expiration, bytes calldata data)"
                   data="{\\"requestId\\": $(decode_log.requestId), \\"payment\\": $(decode_log.payment), \\"callbackAddress\\": $(decode_log.callbackAddr), \\"callbackFunctionId\\": $(decode_log.callbackFunctionId), \\"expiration\\": $(decode_log.cancelExpiration), \\"data\\": $(encode_data)}"
                  ]
     submit_tx    [type=ethtx to="0x327A92FBb7D7c96D349B4207603B910d3c40c9F5" data="$(encode_tx)"]
 
-    decode_log -> decode_cbor -> fetch_1 -> parse_1 -> fetch_2 -> parse_2 -> fetch_3 -> parse_3 -> fetch_4 -> parse_4 -> fetch_5 -> parse_5 -> my_median_task -> parse_mode -> encode_data -> encode_tx -> submit_tx
+    decode_log -> decode_cbor -> fetch_1 -> parse_1 -> fetch_2 -> parse_2 -> fetch_3 -> parse_3 -> fetch_4 -> parse_4 -> fetch_5 -> parse_5 -> my_median_task -> encode_data -> encode_tx -> submit_tx
 """
-externalJobID = "0f9bdfe2-8827-45fa-b183-fa15c7593291"
+externalJobID = "05fa7690-4872-4856-a7db-9c231eeb153c"
